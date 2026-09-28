@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "BeamLab Control — Magnetic Digital Twin" },
-      { name: "description", content: "Interactive magnetic field simulation and beamline analysis workspace." },
-      { property: "og:title", content: "BeamLab Control — Magnetic Digital Twin" },
-      { property: "og:description", content: "Interactive magnetic field simulation and beamline analysis workspace." },
+      { title: "Baghewala Digital Twin — Heavy-Oil Well Simulation" },
+      { name: "description", content: "Interactive Baghewala heavy-oil well simulation, operating advisory, and modeled production analysis." },
+      { property: "og:title", content: "Baghewala Digital Twin — Heavy-Oil Well Simulation" },
+      { property: "og:description", content: "Interactive Baghewala heavy-oil well simulation, operating advisory, and modeled production analysis." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -53,8 +53,8 @@ function Panel({ title, children, action }: { title: string; children: React.Rea
 
 function Index() {
   const [running, setRunning] = useState(true);
-  const [solver, setSolver] = useState("Navier–Stokes · Implicit");
-  const [tab, setTab] = useState("Field overview");
+  const [solver, setSolver] = useState("Reference baseline");
+  const [tab, setTab] = useState("Well overview");
   return <div className="lab-shell min-h-screen bg-background text-foreground">
     <div className="mx-auto max-w-[1560px] px-4 py-4 sm:px-5">
       <header className="glass-panel mb-4 flex min-h-16 items-center justify-between px-4 py-3">
