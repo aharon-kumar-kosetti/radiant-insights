@@ -58,5 +58,27 @@
 .chart-area { height:13rem; overflow:hidden; }.chart-grid path{stroke:var(--border);stroke-width:1;fill:none}.chart-line-primary,.chart-line-accent{fill:none;stroke-width:3;vector-effect:non-scaling-stroke}.chart-line-primary{stroke:var(--primary)}.chart-line-accent{stroke:var(--accent)}
 .legend-dot{display:flex;align-items:center;gap:.35rem;color:var(--muted-foreground)}.legend-dot::before{content:"";width:.45rem;height:.45rem;border-radius:50%}
 .reading-tile { border:1px solid color-mix(in oklab,var(--border) 65%,transparent); border-radius:.5rem; background:color-mix(in oklab,var(--card) 72%,transparent); padding:1rem; }
+.advisory-callout { display:flex; align-items:flex-start; gap:.8rem; border:1px solid color-mix(in oklab,var(--primary) 28%,var(--border)); border-radius:.5rem; background:color-mix(in oklab,var(--primary) 7%,var(--card)); padding:1rem; font-size:.75rem; line-height:1.65; }
+.success-callout { display:flex; align-items:center; gap:.8rem; border:1px solid color-mix(in oklab,var(--accent) 38%,var(--border)); border-radius:.5rem; background:color-mix(in oklab,var(--accent) 9%,var(--card)); padding:1rem; color:var(--accent-foreground); font-size:.75rem; line-height:1.6; }
+.constraint-cell { display:flex; min-height:5.5rem; align-items:center; justify-content:space-between; gap:1rem; border-bottom:1px solid color-mix(in oklab,var(--border) 58%,transparent); padding:1rem 1.25rem; }
+.tag-ok,.tag-watch { border-radius:999px; padding:.25rem .5rem; font:600 .58rem var(--font-mono); }
+.tag-ok { background:color-mix(in oklab,var(--accent) 14%,transparent); color:var(--accent-foreground); }
+.tag-watch { background:color-mix(in oklab,var(--primary) 13%,transparent); color:var(--brand-deep); }
+.data-table { width:100%; min-width:48rem; border-collapse:collapse; font-size:.7rem; }
+.data-table th { background:color-mix(in oklab,var(--muted) 48%,transparent); padding:.75rem 1.25rem; text-align:left; color:var(--muted-foreground); font:600 .58rem var(--font-mono); text-transform:uppercase; }
+.data-table td { border-top:1px solid color-mix(in oklab,var(--border) 55%,transparent); padding:.85rem 1.25rem; }
+.data-table .modeled-value { color:var(--brand-deep); font-family:var(--font-mono); font-weight:700; }
+.icon-tile { display:grid; width:2.5rem; height:2.5rem; place-items:center; border-radius:.5rem; background:color-mix(in oklab,var(--primary) 11%,var(--card)); color:var(--primary); }
+.icon-tile svg { width:1.1rem; height:1.1rem; }
+.trace-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.7rem; }
+.trace-step { position:relative; display:flex; min-height:6.5rem; align-items:flex-start; gap:.7rem; border:1px solid color-mix(in oklab,var(--border) 62%,transparent); border-radius:.5rem; background:color-mix(in oklab,var(--card) 70%,transparent); padding:1rem; }
+.trace-step>span { color:var(--primary); font:700 .65rem var(--font-mono); }.trace-step b{font-size:.72rem}.trace-step p{margin-top:.35rem;color:var(--muted-foreground);font-size:.66rem;line-height:1.5}.trace-arrow{position:absolute;right:-.65rem;top:2.5rem;z-index:2;width:1rem;height:1rem;color:var(--primary)}
+.pipeline { display:flex; align-items:flex-start; justify-content:space-between; overflow-x:auto; padding-bottom:.5rem; }
+.pipeline-item { display:flex; min-width:7rem; flex:1; align-items:center; gap:.55rem; color:var(--muted-foreground); font:600 .6rem var(--font-mono); text-transform:uppercase; }
+.pipeline-item>svg { margin-left:auto; width:.9rem; color:var(--primary); }.pipeline-node { display:grid; width:1.7rem; height:1.7rem; flex:none; place-items:center; border-radius:50%; background:var(--primary); color:var(--primary-foreground); font-size:.6rem; }
+@media(min-width:640px){.constraint-cell:nth-last-child(-n+2){border-bottom:0}}
+@media(min-width:1024px){.constraint-cell:nth-last-child(-n+4){border-bottom:0}.constraint-cell:not(:nth-child(4n)){border-right:1px solid color-mix(in oklab,var(--border) 58%,transparent)}}
 @media(max-width:1279px){.simulation-stage{min-height:31rem}} @media(max-width:640px){.simulation-stage{min-height:25rem}.arc-c{display:none}}
+@media(max-width:900px){.trace-grid{grid-template-columns:1fr 1fr}.trace-arrow{display:none}}
+@media(max-width:560px){.trace-grid{grid-template-columns:1fr}.success-callout{align-items:flex-start;flex-wrap:wrap}.pipeline{min-width:48rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
